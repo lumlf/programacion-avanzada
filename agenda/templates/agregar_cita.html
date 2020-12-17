@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agregar Cita</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilos.css') }}">
+    </head>
+    <body>
+        <form action="{{ request.path }}" method="POST">
+            <label for="conid">Numero de contacto: </label>
+            <input type="text" id="conid" name="conid"/><br>
+
+            <label for="lugar">Lugar: </label>
+            <input type="text" id="lugar" name="lugar"/><br>
+
+            <label for="fecha">Fecha (aaaa-mm-dd): </label>
+            <input type="text" id="fecha" name="fecha"/><br>
+            
+            <label for="hora">Hora (hh:mm:ss): </label>
+            <input type="text" id="hora" name="hora"/><br>
+            
+            <label for="descripcion">Descripcion: </label>
+            <input type="text" id="descripcion" name="descripcion"/><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+        <nav class="navegar">
+            <a href="/todos">Todos</a><br>
+            <a href="/usuarios">Usuarios</a><br>
+            <a href="/contactos">Contactos</a><br>
+        </nav>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Contactos</title>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css')}}">
+    </head>
+    <body>
+        <h1 align="center">Contactos</h1>
+        <center><table border='1'>
+            <tr>
+                <th colspan='9'>Contactos</th>
+            </tr>
+            <tr>
+                <th>ID Usuario</th><th>Usuario</th><th>ID Contacto</th><th>Nombre</th><th>Apellido</th><th>Telefono</th><th>Email</th><th>Direccion</th><th>Actualizar</th><th>Eliminar</th>
+            </tr>
+            {% for u in contactos%}
+            <tr>
+                <td align="center">{{ u[0] }}</td>
+                <td align="center">{{ u[1] }}</td>
+                <td align="center">{{ u[2] }}</td>
+                <td align="center">{{ u[3] }}</td>
+                <td align="center">{{ u[4] }}</td>
+                <td align="center">{{ u[5] }}</td>
+                <td align="center">{{ u[6] }}</td>
+                <td align="center">{{ u[7] }}</td>
+                <td><a href="/actualizar_contacto?id={{ u[2] }}">Actualizar</a></td>
+                <td><a href="/eliminar_contacto?id={{ u[2] }}">Eliminar</a></td>
+            </tr>
+        {% endfor %}
+        </table></center>
+        <nav class="navegar">
+            <a href="/todos">Todos</a><br>
+            <a href="/usuarios">Usuarios</a><br>
+            <a href="/contactos">Contactos</a><br>
+        </nav>
+    </body>
+
+</html>

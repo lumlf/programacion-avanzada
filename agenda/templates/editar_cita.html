@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Editar Cita</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilos.css') }}">
+    </head>
+    <body>
+        <form action="{{ request.path }}" method="POST">
+            <input type="hidden" id="id" name="id" value="{{ cita[0] }}"/>
+            <label for="lugar">Lugar: </label>
+            <input type="text" id="lugar" name="lugar" value="{{ cita[1] }}"/><br>
+            
+            <label for="fecha">Fecha: </label>
+            <input type="text" id="fecha" name="fecha" value="{{ cita[2] }}"/><br>
+
+            <label for="hora">Hora: </label>
+            <input type="text" id="hora" name="hora" value="{{ cita[3] }}"/><br>
+
+            <label for="descripcion">Descripcion: </label>
+            <input type="text" id="descripcion" name="descripcion" value="{{ cita[4] }}"/><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+        <nav class="navegar">
+            <a href="/todos">Todos</a><br>
+            <a href="/usuarios">Usuarios</a><br>
+            <a href="/contactos">Contactos</a><br>
+        </nav>
+    </body>
+</html>

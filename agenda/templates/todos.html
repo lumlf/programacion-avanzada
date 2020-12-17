@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Todos</title>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css')}}">
+    </head>
+    <body>
+        <h1 align="center">Todos</h1>
+        <center><table border='1'>
+            <tr>
+                <th>Usuario</th>
+                <th colspan='3'>Contacto</th>
+                <th colspan='2'>Cita</th>
+                <th colspan='3'>Botones</th>
+            </tr>
+            {% for u in citas%}
+            <tr>
+                <td align="center">{{ u[0] }}</td>
+                <td align="center">{{ u[1] }}</td>
+                <td align="center">{{ u[2] }}</td>
+                <td align="center">{{ u[3] }}</td>
+                <td align="center">{{ u[4] }}</td>
+                <td align="center">{{ u[5] }}</td>
+                <td><a href="/actualizar_cita?id={{ u[6] }}">Actualizar cita</a></td>
+                <td><a href="/eliminar_cita?id={{ u[6] }}">Eliminar cita</a></td>
+                <td><a href="/agregar_cita">Agregar cita</a></td>
+            </tr>
+        {% endfor %}
+        </table></center>
+        <nav class="navegar">
+            <a href="/todos">Todos</a><br>
+            <a href="/usuarios">Usuarios</a><br>
+            <a href="/contactos">Contactos</a><br>
+        </nav>
+    </body>
+
+</html>
